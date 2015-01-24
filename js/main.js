@@ -16,10 +16,9 @@
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
     }
 
-    var accordionPanelTemplate =
-        "<li id=\"{{id}}\" class=\"block social1\">\
-            <a href=\"#\"><span class=\"title\">{{topic}}</span></a>\
-        </li>";
+    var accordionPanelTemplate = "<li id=\"{{id}}\" class=\"block social1\">\
+    <a href=\"#\"><span class=\"title\">{{topic}}</span></a>\
+    </li>";
 
     TOPIC_SERVICES = [ ];
 
@@ -44,7 +43,7 @@
                 };
                 resultSet.append(Mustache.render(accordionPanelTemplate, data));
                 var panel = $("#collapse-" + hashCode(relatedTopic) + " .panel-body");
-                dispatchRefs(relatedTopic, panel);
+                //dispatchRefs(relatedTopic, panel);
             }
         }
     };

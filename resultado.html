@@ -14,7 +14,7 @@ if (window.location.hash == '#_=_') {
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>WWWW</title>
+<title>WordGalaxy</title>
 <meta name="description" content="">
 <meta http-equiv="Cache-control" content="public">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,9 +40,9 @@ if (window.location.hash == '#_=_') {
 		<div class="container-fluid">
 			<div class="col-xs-8">
 				<h1><a href="#">WWWWWW</a></h1>
-				<form class="form-inline" id="global-search">
+				<form class="form-inline" id="global-search" method="GET">
 					<label for="search" class="sr-only">Search</label>
-					<input type="search" class="form-control search" name="search" placeholder="Busca sobre cualquier tema&hellip;" autocapitalize="off" autocorrect="off" tabindex="1" style="width: 500px;" value="hambre en Africa">
+					<input type="search" class="form-control search" name="search" placeholder="Busca sobre cualquier tema&hellip;" autocapitalize="off" autocorrect="off" tabindex="1" style="width: 500px;">
 					<span class="glyphicon glyphicon-remove-circle"></span>
 				</form>
 			</div>
@@ -75,6 +75,7 @@ if (window.location.hash == '#_=_') {
 
 <div class="container-fluid tb-wrapper" style="background-color: white; height: 100%; margin-top: 80px; ">
 
+<<<<<<< HEAD:html/resultado.html
 	<div style="width: 30%; height: 100%; display: inline-block; background-color: #091528; padding: 10xp; position: fixed;">
 
 		<h4 style="color: white; padding-left: 8px;">Témas propuestos <span style="color: #888">(98)</span></h4>
@@ -136,6 +137,12 @@ if (window.location.hash == '#_=_') {
 			<li class="block">
 				<a href="#"><span class="title">Africa antes de la colonizacion</span></a>
 			</li>
+=======
+	<div style="overflow: scroll; width: 30%; height: 100%; display: inline-block; background-color: #091528; padding: 10px;">
+
+		<h4 style="color: white; padding-left: 8px;">Témas propuestos <span style="color: #888">(98)</span></h4>
+		<ul id="resultset" class="blocks">
+>>>>>>> FETCH_HEAD:resultado.html
 		</ul>
 
 	</div>
@@ -195,81 +202,40 @@ if (window.location.hash == '#_=_') {
 <br>
 <br>
 
-<!--
-<footer>
-	<div class="container">
-			<div class="col-xs-6 col-sm-2">
-				<h4>About</h4>
-				<ul id="footer-nav">
-					<li><a href="https://about.tagboard.com/overview">Overview</a></li>
-					<li><a href="https://about.tagboard.com/whyhashtags">Why Hashtags</a></li>
-					<li><a href="https://about.tagboard.com/company">Company</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-6 col-sm-2">
-				<h4>Tagboard Live</h4>
-				<ul id="footer-nav">
-					<li><a href="https://about.tagboard.com/live">Overview</a></li>
-					<li><a href="https://about.tagboard.com/sports">Sports &amp; Stadiums</a></li>
-					<li><a href="https://about.tagboard.com/tv">TV &amp; Broadcast</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-6 col-sm-2">
-				<h4>Enterprise</h4>
-				<ul id="footer-nav">
-					<li><a href="https://about.tagboard.com/enterprise">Overview</a></li>
-					<li><a href="https://about.tagboard.com/customers">Customers</a></li>
-					<li><a href="https://about.tagboard.com/demo">Request Demo</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-6 col-sm-2 col-md-offset-1">
-				<h4>Resources</h4>
-				<ul id="footer-nav">
-					<li><a href="http://support.tagboard.com/" target="_blank">Support <i class="glyphicon glyphicon-new-window"></i></a></li>
-					<li id="contact"><a href="https://about.tagboard.com/contact">Contact Us</a></li>
-					<li><a href="https://about.tagboard.com/legal">Legal</a></li>
-					<li><a href="http://blog.tagboard.com/">Blog</a></li>
-				</ul>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 pull-right">
-				<p class="vanity-links"><a href="https://twitter.com/tagboard" id="omg-follow-us-on-twitter" target="_blank">Twitter</a><span>&emsp;</span><a href="https://www.facebook.com/tagboard" id="plz-like-us-on-facebook" target="_blank">Facebook</a><span>&emsp;</span><a href="http://instagram.com/tagboard" id="lol-instagram-is-fun" target="_blank">Instagram</a></p>
-			</div>
-	</div>
-</footer>
--->
+        <script src="js/201501231703.js"></script>
+        <script type="text/javascript" class="k">
+            var k = "";
 
+            if(k !== "") {
+                tgb.filters.setBlockedKeywords(k.split(","));
+            }
 
-<script src="js/201501231703.js"></script>
+            $('.k').remove();
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="application/javascript"></script>
+        <script src="js/libs/mustache.js" type="application/javascript"></script>
+        <script src="js/main.js" type="application/javascript"></script>
+        <script src="js/refServices/searchEnginesButtons.js" type="application/javascript"></script>
+        <script src="js/topicServices/GSService.js" type="application/javascript"></script>
+        <script src="js/topicServices/WGService.js" type="application/javascript"></script>
+        <script src="js/refServices/dbpediaService.js" type="application/javascript"></script>
+        <!--[if lt IE 7 ]>
+        <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+        <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+        <![endif]-->
+        <script type="text/javascript">
+            // Checks the size of the browser window and sets the min-height of the footer to fill the remaining space.
+            $(function(){
+                $(window).load(resizeFooter);
+                $(window).resize(resizeFooter);
 
-	<script type="text/javascript" class="k">
-		var k = "";
-
-		if(k !== "") {
-			tgb.filters.setBlockedKeywords(k.split(","));
-		}
-		
-		$('.k').remove();
-	</script>
-
-<!--[if lt IE 7 ]>
-<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-<![endif]-->
-
-
-		<script type="text/javascript">
-			// Checks the size of the browser window and sets the min-height of the footer to fill the remaining space.
-			$(function(){
-				$(window).load(resizeFooter);
-				$(window).resize(resizeFooter);
-
-			});
-			function resizeFooter() {
-				var windowHeight = window.innerHeight;
-				var footerHeight = $("footer").offset();
-				var flexFooter = windowHeight - (footerHeight.top);
-				$("footer").css("min-height", flexFooter);
-			}
-		</script>
+            });
+            function resizeFooter() {
+                var windowHeight = window.innerHeight;
+                var footerHeight = $("footer").offset();
+                var flexFooter = windowHeight - (footerHeight.top);
+                $("footer").css("min-height", flexFooter);
+            }
+        </script>
 	</body>
 </html>

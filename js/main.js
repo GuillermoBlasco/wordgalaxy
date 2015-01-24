@@ -12,29 +12,20 @@
             return p;
         }, []);
     };
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
 
     var accordionPanelTemplate =
-        "<div class=\"panel panel-default\"> \
-            <div class=\"panel-heading\" role=\"tab\" id=\"{{id}}\"> \
-                <h4 class=\"panel-title\"> \
-                    <a class=\"collapsed\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse-{{id}}\" aria-expanded=\"false\" aria-controls=\"collapse-{{id}}\"> \
-                    {{topic}} \
-                    </a> \
-                </h4> \
-            </div> \
-            <div id=\"collapse-{{id}}\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"{{id}}\"> \
-                <div class=\"panel-body\">\
-                    <div class=\"container\">\
-                    </div>\
-                </div> \
-            </div> \
-        </div>";
+        "<li id=\"{{id}}\" class=\"block social1\">\
+            <a href=\"#\"><span class=\"title\">{{topic}}</span></a>\
+        </li>";
 
     TOPIC_SERVICES = [ ];
 
     REF_SERVICES = [ ];
 
-    var wordInput = $("#wordInput");
+    var wordInput = $("#global-search").find("input");
     var resultSet = $("#resultset");
 
     var topics = [];
@@ -52,17 +43,20 @@
                     topic : relatedTopic
                 };
                 resultSet.append(Mustache.render(accordionPanelTemplate, data));
-                var topicElement = $("#collapse-" + hashCode(relatedTopic) + " .panel-body");
-                for (var i = 0; i < REF_SERVICES.length; i++) {
-                    REF_SERVICES[i](relatedTopic, topicElement);
-                }
+                var panel = $("#collapse-" + hashCode(relatedTopic) + " .panel-body");
+                dispatchRefs(relatedTopic, panel);
             }
         }
     };
 
+    var dispatchRefs = function(relatedTopic, panel) {
+        for (var i = 0; i < REF_SERVICES.length; i++) {
+            REF_SERVICES[i](relatedTopic, panel);
+        }
+    };
 
     var getWord = function() {
-        return wordInput.val();
+        return getURLParameter("search");
     };
     var dispatchInput = function() {
         resultSet.empty();
@@ -74,10 +68,8 @@
         }
     };
 
-    $("#searchButton").click(dispatchInput);
-    wordInput.keyup(function(e) {
-        if(e.keyCode == 13) {
-            dispatchInput();
-        }
+    $(document).ready(function() {
+        wordInput.val(getWord());
+        dispatchInput();
     });
 })();

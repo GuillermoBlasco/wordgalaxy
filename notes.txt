@@ -1,0 +1,9 @@
+GOOGLE TRENDS
+http://www.google.com/trends/fetchComponent?q=hambre%20asia,hambre%20africa&cid=TIMESERIES_GRAPH_0&export=3
+
+http://blog.teamgrowth.net/index.php/search-engine-optimization/google-trends-php-api-for-hourly-updates
+
+https://github.com/peitalin/gtrends-beta
+
+https://github.com/gabrielfs7/google-trends
+

@@ -17,7 +17,7 @@
     }
 
     var accordionPanelTemplate = "<li id=\"{{id}}\" class=\"block social1\">\
-    <a href=\"#\"><span class=\"title\">{{topic}}</span></a>\
+    <a href=\"javascript:refs(\'{{topic}}\');\"><span class=\"title\">{{topic}}</span></a>\
     </li>";
 
     TOPIC_SERVICES = [ ];

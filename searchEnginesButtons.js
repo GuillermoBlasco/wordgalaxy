@@ -14,9 +14,9 @@
 
         var data = {
             google : encodeURIComponent(topic),
-            bing : encodeURIComponent(topic.replace(" ", "+")),
-            ask : encodeURIComponent(topic.replace(" ", "+")),
-            duckduckgo : encodeURIComponent(topic.replace(" ", "+"))
+            bing : encodeURIComponent(topic),
+            ask : encodeURIComponent(topic),
+            duckduckgo : encodeURIComponent(topic)
         };
         var urlData = {
             googleUrl : Mustache.render("https://www.google.es/webhp#q={{google}}", data),

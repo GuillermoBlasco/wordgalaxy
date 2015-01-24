@@ -16,8 +16,8 @@ class DBpediaSpotlight extends BaseAPI {
         // set API arguments
         $this->api_args = array(
             'text' => stripslashes($text),
-            'confidence' => !empty($GLOBALS['api_config']['DBpediaSpotlight']['confidence']) ? $GLOBALS['api_config']['DBpediaSpotlight']['confidence'] : 0.4,
-            'support' => !empty($GLOBALS['api_config']['DBpediaSpotlight']['support']) ? $GLOBALS['api_config']['DBpediaSpotlight']['support'] : 20
+            'confidence' => !empty($GLOBALS['api_config']['DBpediaSpotlight']['confidence']) ? $GLOBALS['api_config']['DBpediaSpotlight']['confidence'] : 0.2,
+            'support' => !empty($GLOBALS['api_config']['DBpediaSpotlight']['support']) ? $GLOBALS['api_config']['DBpediaSpotlight']['support'] : 10
         );
     }
     /**
@@ -27,21 +27,25 @@ class DBpediaSpotlight extends BaseAPI {
      */
     public function getEntities() {
         if(empty($this->entities)) {
-            foreach($this->data['Resources'] as $e) {
-                $urls = array($e['@URI']);
-                $entity = array(
-                    'name' => $e['@URI'],
-                    'score' => $e['@similarityScore'],
-                    'disambiguation' => $urls
-                );
-                $this->entities[] = $entity;
+            if (empty($this->data['Resources'])) {
+                $this->entities = [];
+            } else {
+                foreach ($this->data['Resources'] as $e) {
+                    $urls = array($e['@URI']);
+                    $entity = array(
+                        'name' => $e['@URI'],
+                        'score' => $e['@similarityScore'],
+                        'disambiguation' => $urls
+                    );
+                    $this->entities[] = $entity;
+                }
             }
         }
         return $this->entities;
     }
 }
 
-$text = "amazon prime movies";
+$text = $_GET["q"];
 $db = new DBpediaSpotlight();
 $db->init_nlp($text);
 $db->query();

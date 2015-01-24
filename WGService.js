@@ -6,7 +6,7 @@
     var service = function(word, callback) {
 
         $.ajax({
-            url: "topicService.php",
+            url: "api/topicService.php",
             data: {
                 q: word
             },

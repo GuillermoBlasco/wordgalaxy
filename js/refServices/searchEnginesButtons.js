@@ -23,12 +23,12 @@
             scholar : encodeURIComponent(topic.replace(" ", "+"))
         };
         var urlData = {
-            googleUrl : Mustache.render("https://www.google.es/webhp#q={{google}}", data),
-            bingUrl : Mustache.render("http://www.bing.com/search?q={{bing}}", data),
+            googleUrl : Mustache.render("https://www.google.es/webhp#q={{google}}&lr=lang_ca", data),
+            bingUrl : Mustache.render("http://www.bing.com/search?q={{bing}}&lf=1", data),
             askUrl : Mustache.render("http://www.ask.com/web?q={{ask}}", data),
-            duckUrl : Mustache.render("https://duckduckgo.com/?q={{duckduckgo}}", data),
+            duckUrl : Mustache.render("https://duckduckgo.com/?q={{duckduckgo}}&lr=lang_ca", data),
             twitterUrl : Mustache.render("https://twitter.com/search?q={{twitter}}%20filter%3Alinks", data),
-            scholarUrl : Mustache.render("https://scholar.google.es/scholar?q={{scholar}}", data)
+            scholarUrl : Mustache.render("https://scholar.google.es/scholar?q={{scholar}}&lr=lang_ca", data)
             
         };
 

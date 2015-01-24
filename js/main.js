@@ -17,7 +17,7 @@
     }
 
     var accordionPanelTemplate = "<li id=\"{{id}}\" class=\"block social1\">\
-    <a href=\"#\"><span class=\"title\">{{topic}}</span></a>\
+    <a href=\"javascript:refs(\'{{topic}}\');\"><span class=\"title\">{{topic}}</span></a>\
     </li>";
 
     TOPIC_SERVICES = [ ];
@@ -35,6 +35,7 @@
         servicesDone += 1;
         if (servicesDone === TOPIC_SERVICES.length) {
             topics = arrayUnique(topics);
+            $("body > div.container-fluid.tb-wrapper > div:nth-child(1) > h4 > span").text("(" + topics.length + ")");
             for (var j = 0; j < topics.length; j++) {
                 var relatedTopic = topics[j];
                 var data = {
@@ -48,7 +49,7 @@
         }
     };
 
-    var dispatchRefs = function(relatedTopic, panel) {
+    dispatchRefs = function(relatedTopic, panel) {
         for (var i = 0; i < REF_SERVICES.length; i++) {
             REF_SERVICES[i](relatedTopic, panel);
         }
@@ -69,6 +70,7 @@
 
     $(document).ready(function() {
         wordInput.val(getWord());
+        $("body > header > div > h2 > span > a").text(getWord());
         dispatchInput();
     });
 })();

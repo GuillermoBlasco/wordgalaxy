@@ -77,8 +77,8 @@ if (window.location.hash == '#_=_') {
 
 	<div style="width: 30%; height: 100%; display: inline-block; background-color: #091528; padding: 10px; position: fixed;">
 
-		<h4 style="color: white; padding-left: 8px;">Temas propuestos <span style="color: #888">(98)</span></h4>
-		<ul id="result" class="blocks">
+		<h4 style="color: white; padding-left: 8px;">Temas propuestos <span style="color: #888"></span></h4>
+		<ul id="resultset" class="blocks">
 		</ul>
 
 	</div>
@@ -89,12 +89,8 @@ if (window.location.hash == '#_=_') {
 			<h5 style="margin-bottom: 1px; color: #888; padding-bottom: 4px;"><img src="img/icon-info.svg" width="28" height="28"> Resumen</h5>
 			<p class="resume">Nullam sollicitudin quam in odio sollicitudinporttitor, ac fermentum sollicitudin odio ornare.</p>
 
-			<h5 style="margin-bottom: 1px; color: #888; padding-top: 8px;"><img src="img/icon-wikipedia.svg" width="28" height="28"> En Wikipedia <span style="color: #ccc">(23)</span></h5>
+			<h5 style="margin-bottom: 1px; color: #888; padding-top: 8px;"><img src="img/icon-wikipedia.svg" width="28" height="28"> En Wikipedia <span style="color: #ccc">()</span></h5>
 			<ul>
-				<li><a href="#">Mapa de africa antes de la colonizacion <img src="img/icon-link.svg" width="12" height="12"></a></li>
-				<li><a href="#">Africa antes de la colonizacion europea <img src="img/icon-link.svg" width="12" height="12"></a></li>
-				<li><a href="#">Esclavitud en africa antes de la colonizacion <img src="img/icon-link.svg" width="12" height="12"></a></li>
-				<li><a href="#">Productos exporta africa antes de la colonizacion del siglo 19 <img src="img/icon-link.svg" width="12" height="12"></a></li>
 			</ul>
 
 			<br>
@@ -140,6 +136,12 @@ if (window.location.hash == '#_=_') {
 
         <script src="js/201501231703.js"></script>
         <script type="text/javascript" class="k">
+
+            function refs(topic) {
+                $("body > div.container-fluid.tb-wrapper > div.preview > h4 > strong").text(topic);
+                dispatchRefs(topic, $("body > div.container-fluid.tb-wrapper > div.preview"));
+            }
+
             var k = "";
 
             if(k !== "") {
@@ -148,6 +150,7 @@ if (window.location.hash == '#_=_') {
 
             $('.k').remove();
         </script>
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="application/javascript"></script>
         <script src="js/libs/mustache.js" type="application/javascript"></script>
         <script src="js/main.js" type="application/javascript"></script>

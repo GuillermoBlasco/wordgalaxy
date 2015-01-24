@@ -27,7 +27,7 @@
             bingUrl : Mustache.render("http://www.bing.com/search?q={{bing}}&lf=1", data),
             askUrl : Mustache.render("http://www.ask.com/web?q={{ask}}", data),
             duckUrl : Mustache.render("https://duckduckgo.com/?q={{duckduckgo}}&lr=lang_ca", data),
-            twitterUrl : Mustache.render("https://twitter.com/search?q={{twitter}}%20filter%3Alinks", data),
+            twitterUrl : Mustache.render("https://twitter.com/search?q={{twitter}}%20filter%3Alinks%20lang%3Aca", data),
             scholarUrl : Mustache.render("https://scholar.google.es/scholar?q={{scholar}}&lr=lang_ca", data)
             
         };

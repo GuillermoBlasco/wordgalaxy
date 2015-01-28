@@ -38,8 +38,12 @@ function getUrl($url) {
     return $output;
 }
 
-
-$word = $_GET["q"];
+if (isset($_GET["q"])) {
+    $word = $_GET["q"];
+} else {
+    echo "[]";
+    return;
+}
 
 $duckUrl = "http://ac.duckduckgo.com/ac/?q=" . $word;
 $askUrl = "http://ss.ask.com/query?li=ff&sstype=prefix&q=" . $word;

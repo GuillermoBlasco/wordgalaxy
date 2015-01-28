@@ -44,8 +44,12 @@ class DBpediaSpotlight extends BaseAPI {
         return $this->entities;
     }
 }
-
-$text = $_GET["q"];
+if (isset($_GET["q"])) {
+    $text = $_GET["q"];
+} else {
+    echo "[]";
+    return;
+}
 $db = new DBpediaSpotlight();
 $db->init_nlp($text);
 $db->query();

@@ -1,5 +1,6 @@
 #!/bin/bash
 path=$1
+rm -rf $path
 mkdir $path
 cp -rf api $path/api
 cp -rf css $path/css
